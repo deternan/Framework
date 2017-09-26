@@ -20,14 +20,11 @@ public class Main_Control {
 	}
 	
 	@GET
-	@Path("/autocomplete")
-	@Produces("application/json")
-	public Response getTest() {
-		
-		Test tt = new Test();
-		int get_return = tt.Return_result();
-		
-	    return Response.status(200).entity(get_return).build();
-	}
+	@Path("/query/{param}")
+	@Produces("application/json; charset=UTF-8")
+	public Response getMsg(@PathParam("param") String msg) {
+	
 
+		return Response.status(200).entity(msg.toString()).build();
+	}
 }
