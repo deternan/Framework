@@ -5,7 +5,7 @@
   <artifactId>Search</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Sample Maven Webapp</name>
+  <name>Search Maven Webapp</name>
   <url>http://maven.apache.org</url>
   
   <repositories>
@@ -66,12 +66,27 @@
 		<groupId>com.fasterxml.jackson.jaxrs</groupId>
 		<artifactId>jackson-jaxrs-json-provider</artifactId>
 		<version>2.8.7</version>
+	</dependency>
+	<dependency>
+		<groupId>org.json</groupId>
+		<artifactId>json</artifactId>
+		<version>20160810</version>
 	</dependency>	
+    <dependency>
+    	<groupId>org.mongodb</groupId>
+    	<artifactId>mongo-java-driver</artifactId>
+    	<version>3.4.2</version>
+	</dependency>
+    <dependency>
+    	<groupId>org.apache.struts</groupId>
+    	<artifactId>struts2-core</artifactId>
+    <version>2.0.12</version>
     
+</dependency>
     
   </dependencies>
   <build>
-    <finalName>Sample</finalName>
+    <finalName>Search</finalName>
      <pluginManagement>
         <plugins>
         	
@@ -82,6 +97,7 @@
         		<configuration>
           			<source>1.8</source>
           			<target>1.8</target>
+          			<encoding>UTF-8</encoding> 
           		<compilerArgument>-Xlint:all</compilerArgument>
  				<showWarnings>true</showWarnings>
  				<showDeprecation>true</showDeprecation>
