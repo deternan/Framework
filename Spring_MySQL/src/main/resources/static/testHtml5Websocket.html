@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="BIG5">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+<script>
+
+// https://blog.csdn.net/Veggiel/article/details/52300093
+var websocket = new WebSocket('ws://' + window.location.host + '/my-websocket-endpoint');
+
+
+websocket.onopen = function (evnt) {
+	console.log('WebSocket connection opened. Ready to send messages.');
+    console.log("connection success!");
+    websocket.send("{}");
+    var myObj;
+    myObj = { "userName":"lance.lan"};
+    websocket.send(JSON.stringify(myObj));
+};
+
+websocket.onmessage = function (evnt) {
+	console.log("<br/>" + evnt.data);
+};
+websocket.onerror = function (evnt) {
+};
+websocket.onclose = function (evnt) {
+    console.log("connection closed!")
+}
+
+
+
+
+
+</script>
+</body>
+</html>
