@@ -4,7 +4,7 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
-import com.deltaww.analytics.model.User;
+import com.deltaww.analytics.model.Been.User;
 
 import java.util.List;
 
