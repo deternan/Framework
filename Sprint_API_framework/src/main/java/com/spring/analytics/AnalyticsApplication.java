@@ -55,7 +55,6 @@ public class AnalyticsApplication {
 	                .build();
 	    }
 
-
 	 
 	    @Component
 	    class WebConfigurer extends WebMvcConfigurerAdapter {

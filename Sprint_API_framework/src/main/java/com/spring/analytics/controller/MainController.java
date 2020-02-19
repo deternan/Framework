@@ -2,21 +2,18 @@ package com.spring.analytics.controller;
 
 /*
  * version: November 15, 2018 03:24 PM
- * Last revision: November 15, 2018 06:45 PM
+ * Last revision: February 19, 2020 03:12 PM
  * 
  * Author : Chao-Hsuan Ke
  * 
  */
 
-/*
- * Reference
- * https://codertw.com/%E8%B3%87%E6%96%99%E5%BA%AB/128143/
- * https://www.zifangsky.cn/926.html
- */
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.json.JSONArray;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,11 +23,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.spring.analytics.dto.ItemsResponse;
+import com.spring.analytics.dto.ItemsResponseData;
 import com.spring.analytics.model.Json_generation;
-import com.spring.analytics.model.Been.LoginLogout;
 import com.spring.analytics.model.Been.User;
 import com.spring.analytics.model.request.UserType;
-import com.spring.analytics.service.LoginLogoutService;
+import com.spring.analytics.service.ItemsService;
 import com.spring.analytics.service.UserService;
 
 import io.swagger.annotations.ApiOperation;
@@ -48,15 +46,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MainController {
 
-	private final UserService userService;
-	private final LoginLogoutService loginlogoutService;
+	@Autowired
+	ItemsService itemsService;
+	
+	private final UserService userService;	
 	private final HttpServletRequest request;
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	
 	
 	@Autowired
-	public MainController(UserService userService, LoginLogoutService loginlogoutService, HttpServletRequest request) {
+	public MainController(UserService userService, HttpServletRequest request) {
 		
-		this.userService= userService;
-		this.loginlogoutService = loginlogoutService;
+		this.userService= userService;		
 		this.request = request;
 
 	}
@@ -64,8 +65,7 @@ public class MainController {
 	@RequestMapping(value = "/test/{username}", method = RequestMethod.GET)	
 	ResponseEntity<?> sentNameByName(@PathVariable String username) throws Exception {
 		
-		System.out.println("Test username:"+username);
-		//List<User> users = userService.findUserByUserId(username);
+		System.out.println("Test username:"+username);		
 		
 		Json_generation GJ = new Json_generation();
 		JSONArray jjgen = new JSONArray();
@@ -87,7 +87,6 @@ public class MainController {
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 	
-
 	@RequestMapping(value = "/api/sample/post", method = RequestMethod.POST)							
 	ResponseEntity<Map<String, Object>> userDataPOST(
 			@ApiParam(name = "user data", value = "user's information", required = true) @RequestBody UserType logRequest) {
@@ -103,30 +102,27 @@ public class MainController {
 			response.put("data", logRequest);
 		}else {
 			response.put("status", "error");
-		}
-		
+		}		
 		
 		System.out.println(response);
 		
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 	
-	// -----------------------------------------------------------------------
-	@RequestMapping(value = "/api/test/{openId}", method = RequestMethod.GET)	
-	ResponseEntity<?> sentDataByUserName(@PathVariable String openId) throws Exception {
-				
-		System.out.println("openId:	"+openId);		
-		List<LoginLogout> loginlogout = loginlogoutService.findUserByUserId(openId);
-						
-		
-		System.out.println(loginlogout.get(0).toString());
-		
-		Map<String, Object> response = new HashMap<>();
-		response.put("statusMsg", "SUCCESS");
-		response.put("size", loginlogout.size());
+	// Insert (PUT)
+	@RequestMapping(value = "/insert/items/", method = RequestMethod.PUT)	
+	ResponseEntity<?> insertItems(
+			@ApiParam(name = "title", value = "title", required = true) @RequestParam(required = true) String title,
+			@ApiParam(name = "body", value = "body", required = true) @RequestParam(required = true) String body) throws Exception {						
+
+		logger.info("[" + this.getClass().getName() + "] : Insert Items() - begin");							
+		//ItemsResponse response = itemsService.updatedItems(title, body);
+		ItemsResponseData response = itemsService.updatedItem(title, body);
+		logger.info("[" + this.getClass().getName() + "] : Insert Items() - end");
 		
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
+	
 	
 }
 
