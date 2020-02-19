@@ -27,7 +27,7 @@ public class AnalyticsApplication {
 
 	public static void main(String[] args) {
 			SpringApplication.run(AnalyticsApplication.class, args);
-			System.out.println("SL4SM  analytic api server start");
+			System.out.println("Spring api server start");
 	}
 	
 	
@@ -61,15 +61,14 @@ public class AnalyticsApplication {
 	    class WebConfigurer extends WebMvcConfigurerAdapter {
 	        @Override
 	        public void addResourceHandlers(ResourceHandlerRegistry registry) {
-	            registry.addResourceHandler("/resources/**")
-	                    //.addResourceLocations("file:/home/thumbnails/");      // 35 VM's default path                           
-	                    .addResourceLocations("file:/tmp/disk2/thumbnails/");   // 141 VM's default path                           
+	            registry.addResourceHandler("/resources/**")	                                              
+	                    .addResourceLocations("file:/tmp/disk2/thumbnails/");                           
 	        }
 	    }
 
 	    private ApiInfo apiInfo() {
 	        return new ApiInfoBuilder()
-	                .title("eTube Analytics REST API")
+	                .title("Spring REST API")
 	                .version("1.0")
 	                .build();
 	    }

@@ -5,8 +5,6 @@ package com.deltaww.analytics.controller;
  * Last revision: November 16, 2018 03:24 PM
  * 
  * Author : Chao-Hsuan Ke
- * Institute: Delta Research Center
- * Company : Delta Electronics Inc. (Taiwan)
  * 
  */
 
@@ -56,8 +54,7 @@ public class UserController {
 	@RequestMapping(value = "/test/{username}", method = RequestMethod.GET)	
 	ResponseEntity<?> sentNameByName(@PathVariable String username) throws Exception {
 		
-		System.out.println("Test username:"+username);
-		//List<User> users = userService.findUserByUserId(username);
+		System.out.println("Test username:"+username);		
 		
 		Json_generation GJ = new Json_generation();
 		JSONArray jjgen = new JSONArray();

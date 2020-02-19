@@ -19,8 +19,7 @@ public class Json_generation
 		obj.put("userId", userId_str);
 		obj.put("national", national);		
 		
-		json_array.put(obj);
-		//System.out.println(json_array);
+		json_array.put(obj);		
 	}
 	
 	public JSONArray return_Json()

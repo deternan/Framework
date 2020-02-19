@@ -5,8 +5,6 @@ package com.deltaww.analytics.controller;
  * Last revision: November 15, 2018 06:45 PM
  * 
  * Author : Chao-Hsuan Ke
- * Institute: Delta Research Center
- * Company : Delta Electronics Inc. (Taiwan)
  * 
  */
 
