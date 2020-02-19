@@ -1,12 +1,12 @@
-package com.deltaww.analytics.repository;
+package com.spring.analytics.repository;
 
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
-import com.deltaww.analytics.model.Been.LoginLogout;
-import com.deltaww.analytics.model.request.UserType;
+import com.spring.analytics.model.Been.LoginLogout;
+import com.spring.analytics.model.request.UserType;
 
 
 public interface LoginLogoutRepository extends MongoRepository<LoginLogout, String>{

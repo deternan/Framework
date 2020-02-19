@@ -1,11 +1,10 @@
-package com.deltaww.analytics.service;
+package com.spring.analytics.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.deltaww.analytics.model.Been.LoginLogout;
-//import com.deltaww.analytics.model.request.UserType;
-import com.deltaww.analytics.repository.LoginLogoutRepository;
+import com.spring.analytics.model.Been.LoginLogout;
+import com.spring.analytics.repository.LoginLogoutRepository;
 
 
 import java.util.List;

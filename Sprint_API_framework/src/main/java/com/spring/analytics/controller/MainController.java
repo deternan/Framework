@@ -1,4 +1,4 @@
-package com.deltaww.analytics.controller;
+package com.spring.analytics.controller;
 
 /*
  * version: November 15, 2018 03:24 PM
@@ -26,12 +26,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.deltaww.analytics.model.Json_generation;
-import com.deltaww.analytics.model.Been.LoginLogout;
-import com.deltaww.analytics.model.Been.User;
-import com.deltaww.analytics.model.request.UserType;
-import com.deltaww.analytics.service.LoginLogoutService;
-import com.deltaww.analytics.service.UserService;
+import com.spring.analytics.model.Json_generation;
+import com.spring.analytics.model.Been.LoginLogout;
+import com.spring.analytics.model.Been.User;
+import com.spring.analytics.model.request.UserType;
+import com.spring.analytics.service.LoginLogoutService;
+import com.spring.analytics.service.UserService;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

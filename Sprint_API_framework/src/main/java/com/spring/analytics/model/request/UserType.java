@@ -1,4 +1,4 @@
-package com.deltaww.analytics.model.request;
+package com.spring.analytics.model.request;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

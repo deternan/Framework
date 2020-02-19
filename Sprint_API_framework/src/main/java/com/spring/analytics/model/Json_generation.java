@@ -1,4 +1,4 @@
-package com.deltaww.analytics.model;
+package com.spring.analytics.model;
 
 import org.json.JSONArray;
 import org.json.JSONException;

@@ -1,10 +1,10 @@
-package com.deltaww.analytics.repository;
+package com.spring.analytics.repository;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
-import com.deltaww.analytics.model.Been.User;
+import com.spring.analytics.model.Been.User;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.deltaww.analytics.model.Been;
+package com.spring.analytics.model.Been;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
