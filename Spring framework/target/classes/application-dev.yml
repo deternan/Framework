@@ -1,0 +1,31 @@
+
+server:
+  port: 9090
+  servlet:
+    session:
+      timeout: 10m  
+      connection-timeout: 10m
+  tomcat:
+    max-connections: 3000
+  compression:
+    enabled: true
+    types: text/html,text/css,application/json
+    min-response-size: 2048
+
+#mongodb
+#spring.data.mongodb.uri=mongodb://10.136.153.243:18210/etubeSL4SM
+
+spring:
+  profiles: dev
+  data.mongodb:
+    host: 10.136.154.5
+    port: 8083
+    database: ncov2019
+    datasource:
+      max-active: 3000
+      max-wait: 3000    		
+  servlet:
+    multipart:
+    max-file-size: 2048MB
+    max-request-size: 2048MB  	
+

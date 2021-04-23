@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: analytics
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: BARRY.KE
+Implementation-Vendor-Id: com.spring
+Build-Jdk: 1.8.0_181
+Implementation-URL: http://projects.spring.io/spring-boot/Springframew
+ ork/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
